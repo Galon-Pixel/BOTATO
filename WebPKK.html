@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOTATO - Kentang Goreng Ceria</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff8e1;
+      color: #4c4b4b;
+      scroll-behavior: smooth;
+    }
+
+    /* ==== NAVBAR ==== */
+    nav {
+      background: linear-gradient(90deg,#ffb300,#ff9500);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 40px;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    nav h1 { color:white; font-weight:700; font-size:1.5rem; }
+    nav ul { list-style:none; display:flex; gap:20px; }
+    nav ul li a {
+      color:white; text-decoration:none; font-weight:600; transition:color 0.3s;
+    }
+    nav ul li a:hover { color:#fffde7; }
+
+    /* ==== HERO ==== */
+    .hero {
+      position:relative;
+      background:#ffeb99;
+      text-align:center;
+      padding:120px 20px;
+      overflow:hidden;
+    }
+
+    .hero h2 { font-size:3rem; font-weight:700; color:#e65100; animation:fadeIn 1s ease;}
+    .hero p { font-size:1.2rem; margin:15px 0; animation:fadeIn 1.2s ease;}
+    .hero .button {
+      display:inline-block; padding:14px 28px; background:#ffb300;
+      color:white; font-weight:bold; border-radius:8px; text-decoration:none;
+      transition:0.3s; box-shadow:0 4px 10px rgba(0,0,0,0.3); animation:fadeIn 1.4s ease;
+    }
+    .hero .button:hover { background:#ff9500; transform:scale(1.05); }
+
+    /* Kentang animasi */
+    .potato {
+      position:absolute; width:50px; animation:float 4s ease-in-out infinite;
+    }
+    .potato:nth-child(1){ left:10%; animation-delay:0s;}
+    .potato:nth-child(2){ left:40%; animation-delay:1s;}
+    .potato:nth-child(3){ left:70%; animation-delay:2s;}
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg);}
+      50% { transform: translateY(-20px) rotate(10deg);}
+      100% { transform: translateY(0) rotate(0deg);}
+    }
+
+    /* ==== MENU ==== */
+    section { padding:70px 20px; text-align:center;}
+    h2.section-title { color:#e65100; border-bottom:3px solid #ff9500; display:inline-block; padding-bottom:5px; margin-bottom:40px; font-size:2rem;}
+
+    .menu-container { display:flex; flex-wrap:wrap; justify-content:center; gap:25px; margin-top:30px; }
+    .menu-card {
+      background:#fff; border-radius:15px; width:200px; box-shadow:0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s; overflow:hidden;
+    }
+    .menu-card:hover { transform:translateY(-8px); box-shadow:0 10px 20px rgba(0,0,0,0.2);}
+    .menu-card img { width:100%; height:140px; object-fit:cover; }
+    .menu-info { padding:12px; }
+    .menu-info h3 { color:#e65100; font-weight:600; margin-bottom:5px;}
+    .menu-info p { font-weight:bold; color:#555; }
+
+    .testimoni-card:hover { transform:translateY(-5px); box-shadow:0 10px 20px rgba(0,0,0,0.2);}
+    .testimoni-card p { font-size:0.95rem; color:#333; margin-bottom:8px;}
+    .testimoni-card span { font-weight:bold; color:#e65100;}
+
+    /* ==== TENTANG KAMI ==== */
+    .about { background:#fff3d6; padding:50px 20px; border-radius:15px; margin:40px auto; max-width:800px;}
+
+    /* ==== KONTAK ==== */
+    .kontak p { margin:10px 0; font-size:1rem;}
+    .kontak a { color:#e65100; text-decoration:none; font-weight:600;}
+    .kontak a:hover { text-decoration:underline; }
+
+    /* ==== FOOTER ==== */
+    footer { background:#ffcc80; padding:20px; font-size:14px; color:#444; margin-top:30px; text-align:center;}
+    footer .socials a { margin:0 8px; text-decoration:none; font-size:18px; color:#e65100; transition:color 0.3s;}
+    footer .socials a:hover { color:#ff6f00; }
+
+    /* ==== ANIMASI ==== */
+    @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+
+    /* ==== RESPONSIVE ==== */
+    @media(max-width:768px){ .menu-container,.testimoni-container{flex-direction:column; align-items:center;} nav ul{display:none;} .hero h2{font-size:2rem;} }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <h1>BOTATO</h1>
+    <ul>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Renyah • Gurih • Murah!</h2>
+      <p>Kentang goreng paling hits di kota kamu! Cobain BOTATO sekarang 🍟</p>
+      <a href="#menu" class="button">Lihat Menu</a>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu">
+    <h2 class="section-title">Menu Kami</h2>
+    <div class="menu-container">
+      <div class="menu-card"><img src="Original.png" alt=""><div class="menu-info"><h3>Original</h3><p>Rp8.000</p></div></div>
+      <div class="menu-card"><img src="Keju.png" alt=""><div class="menu-info"><h3>Keju</h3><p>Rp12.000</p></div></div>
+      <div class="menu-card"><img src="Barbeque.png" alt=""><div class="menu-info"><h3>Barbeque</h3><p>Rp12.000</p></div></div>
+    </div>
+    <a href="https://wa.me/62895321233917" class="button" style="margin-top:40px;">Pesan Sekarang</a>
+  </section>
+  <!-- KONTAK -->
+  <section id="kontak" class="kontak">
+    <h2 class="section-title">Kontak Kami</h2>
+    <p>📍 Lokasi: Sekolah SMKN 1 SAMPIT</p>
+    <p>📞 WhatsApp: <a href="https://wa.me/62895321233917">+62 895-3212-33917</a></p>
+    <p>📧 Email: botato.id@gmail.com</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 BOTATO | Dibuat dengan cinta 💛 oleh Fawwaz</p>
+  </footer>
+
+</body>
+</html>
